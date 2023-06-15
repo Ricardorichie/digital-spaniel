@@ -12,6 +12,10 @@ export default defineConfig({
           libName: "antd",
           style: (name) => `antd/es/${name}/style`,
         },
+        {
+          libName: "react-multi-carousel",
+          style: () => "react-multi-carousel/lib/styles.css",
+        },
       ],
     }),
   ],

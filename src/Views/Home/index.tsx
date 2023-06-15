@@ -12,6 +12,7 @@ import Casestudies from "./Sections/Casestudies"
 import Footer from "./Sections/Footer"
 import NavBar from "../../components/Utilities/NavBar"
 import Testimonial from "./Sections/Testimonial"
+import AboutUs from "./Sections/AboutUs"
 
 function Home() {
   return (
@@ -34,6 +35,7 @@ function Home() {
       <Capable />
       <Projects />
       <Casestudies />
+      <AboutUs />
       <Testimonial />
       <Footer />
     </Wrapper>

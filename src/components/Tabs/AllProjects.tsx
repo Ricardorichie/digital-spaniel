@@ -4,6 +4,7 @@ import GridGallery from "../Utilities/GridGallery"
 import { StyledLink } from "../StylesComponents"
 import { useGetProjectsQuery } from "../../app/slices/apiSlices"
 import { AiOutlineLoading } from "react-icons/ai"
+import { Spin } from "antd"
 type AllProjectsProps = {
   data?: ProjectsDataType[]
 }
@@ -13,11 +14,12 @@ function AllProjects(props: AllProjectsProps) {
     error: dataError,
     data: projectsData,
   } = useGetProjectsQuery()
-  console.log("data", projectsData)
+  console.log("Error", dataError)
+
   return (
     <div>
       {loadingData ? (
-        <AiOutlineLoading />
+        <Spin />
       ) : (
         <GridGallery data={projectsData?.length ? projectsData : []} />
       )}

@@ -1,7 +1,10 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react"
-import { ProjectsDataType } from "../../types/dummyDataTypes"
+import {
+  ProjectsDataType,
+  TestimonialDataType,
+} from "../../types/dummyDataTypes"
 const apiUrl = "http://localhost:3010"
-const noAuthHeaders = (headers) => {
+const noAuthHeaders = (headers: any) => {
   headers.set("Content-type", "application/json")
   return headers
 }
@@ -16,7 +19,7 @@ export const api = createApi({
     getProjects: build.query<ProjectsDataType[], void>({
       query: () => "/projects",
     }),
-    getTestimonials: build.query<ProjectsDataType[], void>({
+    getTestimonials: build.query<TestimonialDataType[], void>({
       query: () => "/testimonials",
     }),
   }),

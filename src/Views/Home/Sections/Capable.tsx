@@ -52,7 +52,7 @@ function Capable() {
     <section title="capability section">
       <StyledRow isPaddingVerticalAllowed justify={"start"}>
         <StyledLeftCol xs={{ span: 24 }} lg={{ span: 12 }}>
-          {isHovered ? <CapableContent /> : <></>}
+          {isHovered ? <CapableContent /> : <></>} <br />
         </StyledLeftCol>
         <StyledRightCol xs={{ span: 24 }} lg={{ span: 12 }}>
           <ContentContainer
@@ -61,19 +61,19 @@ function Capable() {
             isCustomizedLeftMargin
           >
             <StyledRow justify={"space-between"}>
-              <StyledLeftCol xs={{ span: 10 }}>
+              <StyledLeftCol xs={{ span: 11 }}>
                 <Title>BRAND</Title>
                 <div style={{ display: "flex" }}>
                   <Title
                     onMouseEnter={handleMouseEnter}
                     // onMouseLeave={handleMouseLeave}
-                    className="subtitle title-pressable"
+                    className="subtitle title-pressable link"
                   >
                     Brand Strategy{" "}
                   </Title>
                   <h3
                     style={{
-                      marginLeft: "10px",
+                      marginLeft: "0.5rem",
                       fontSize: "16px",
                       marginTop: "2px",
                     }}
@@ -82,20 +82,19 @@ function Capable() {
                   </h3>
                 </div>
 
-                <Title className="subtitle ">Logo & Name </Title>
-                <Title className="subtitle ">Identity & collateral </Title>
+                <Title className="subtitle link">Logo & Name </Title>
+                <Title className="subtitle link">Identity & collateral </Title>
                 <br />
                 <br />
-
                 <Title>DEVELOPMENT</Title>
-                <Title className="subtitle ">eCommerce </Title>
-                <Title className="subtitle ">Web Development </Title>
-                <Title className="subtitle ">Mobile Apps </Title>
+                <Title className="subtitle link">eCommerce </Title>
+                <Title className="subtitle link">Web Development </Title>
+                <Title className="subtitle link">Mobile Apps </Title>
               </StyledLeftCol>
               <StyledRightCol xs={{ span: 10 }}>
                 <Title>MARKETING</Title>
-                <Title className="subtitle ">Digital </Title>
-                <Title className="subtitle ">Market Research </Title>
+                <Title className="subtitle link">Digital </Title>
+                <Title className="subtitle link">Market Research </Title>
               </StyledRightCol>
               <StyledRightCol xs={{ span: 2 }}></StyledRightCol>
             </StyledRow>

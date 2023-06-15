@@ -39,7 +39,6 @@ function NavBar() {
   })
   const dispatch = useAppDispatch()
   const drawerSelector = useAppSelector(mobileNavEnabled)
-  console.log("drawerSelector", drawerSelector)
   const handleCloseDrawer = () => {
     dispatch(toggleMobileNav(false))
   }

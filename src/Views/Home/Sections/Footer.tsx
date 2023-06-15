@@ -45,23 +45,29 @@ function Footer() {
                   <StyledLink to={"/process"}>Let's talk</StyledLink>
                 </div>
               </div>
-              <br />
             </StyledLeftCol>
+
             <StyledRightCol xs={{ span: 24 }} lg={{ span: 12 }}>
+              <br />
+              <br />
               <StyledRow justify={"space-between"}>
-                <StyledLeftCol xs={{ span: 12 }} md={{ span: 7 }}>
+                <StyledLeftCol xs={{ span: 12 }} lg={{ span: 7 }}>
                   <Title>EXPLORE</Title>
-                  <Title className="subtitle footerTitle ">Services </Title>
-                  <Title className="subtitle footerTitle ">Work </Title>
-                  <Title className="subtitle footerTitle ">About </Title>
-                  <Title className="subtitle footerTitle ">Blog </Title>
-                  <Title className="subtitle footerTitle ">Careers </Title>
+                  <Title className="subtitle footerTitle link">Services </Title>
+                  <Title className="subtitle footerTitle link">Work </Title>
+                  <Title className="subtitle footerTitle link">About </Title>
+                  <Title className="subtitle footerTitle link">Blog </Title>
+                  <Title className="subtitle footerTitle link">Careers </Title>
                 </StyledLeftCol>
-                <StyledRightCol xs={{ span: 12 }} md={{ span: 7 }}>
+                <StyledRightCol xs={{ span: 12 }} lg={{ span: 7 }}>
                   <Title>SERVICES</Title>
-                  <Title className="subtitle footerTitle ">Brand </Title>
-                  <Title className="subtitle footerTitle ">Development </Title>
-                  <Title className="subtitle footerTitle ">Marketing </Title>
+                  <Title className="subtitle footerTitle link">Brand </Title>
+                  <Title className="subtitle footerTitle link">
+                    Development{" "}
+                  </Title>
+                  <Title className="subtitle footerTitle link">
+                    Marketing{" "}
+                  </Title>
                 </StyledRightCol>
                 <StyledRightCol xs={{ span: 12 }} md={{ span: 7 }} security="">
                   <Title>QUESTIONS?</Title>

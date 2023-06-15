@@ -12,7 +12,6 @@ const ImageProjector = (props: ImageProjectorProps) => {
 
   return (
     <Container>
-      {/* {images.map((image, index) => ( */}
       <ImageWrapper>
         <Image src={`${data.imageUrl}`} alt={data?.imageUrl} />
         <Overlay>
@@ -20,12 +19,10 @@ const ImageProjector = (props: ImageProjectorProps) => {
             <LocalHeaderText>{data?.title}</LocalHeaderText>
             <LocalParagraph>{data?.description}</LocalParagraph>
             <br />
-
             <LocalLink to={"/process"}>Full project</LocalLink>
           </Content>
         </Overlay>
       </ImageWrapper>
-      {/* ))} */}
     </Container>
   )
 }
@@ -33,30 +30,26 @@ const ImageProjector = (props: ImageProjectorProps) => {
 export default ImageProjector
 
 const Container = styled.div`
-  /* display: flex;
-  
-  flex-wrap: wrap; */
-  height:100%
-  background-color: green;
+  width: 100%;
+  flex-wrap: wrap;
+  height: 100%;
 `
 
 const ImageWrapper = styled.div`
   position: relative;
-  /* flex: 0 0 25%;*/
   width: 100%;
   height: 100%;
-
   transition: transform 0.3s ease;
-
   &:hover {
     transform: scale(1);
   }
 `
 
 const Image = styled.img`
-  box-sizing: border-box;
-  /* object-fit: cover; */
-  background-size: cover;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background-size: contain;
 `
 
 const Overlay = styled.div`
@@ -81,9 +74,7 @@ const Overlay = styled.div`
 const Content = styled.div`
   position: absolute;
   bottom:10px;
-  /* background-color:red; */
   z-index: 10;
-  /* transform: translate(-50%, -50%); */
   color: #fff;
   text-align: left;
   padding:1.5rem:

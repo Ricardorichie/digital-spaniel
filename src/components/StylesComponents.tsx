@@ -98,9 +98,9 @@ export const StyledRow = styled(Row)<StyledRowProp>`
 `
 export const LogoContainer = styled.img`
   position: absolute;
-  height: 2rem;
+  height: 5rem;
   top: 2rem;
-  left: 2rem;
+  left: 1rem;
   @media ${device.laptop} {
     height: 5rem;
     top: 2rem;
@@ -138,7 +138,7 @@ export const HeaderText = styled.h1<HeaderTextProp>`
 `
 export const Title = styled.h3<HeaderTextProp>`
   color: ${(props) => props.theme.accentPrimary};
-  font-size: ${mobile.small};
+  font-size: ${mobile.normal};
   font-family: "ITC-Medium", sans-serif;
   font-weight: 400;
   letter-spacing: 2.1px;
@@ -147,7 +147,9 @@ export const Title = styled.h3<HeaderTextProp>`
       ? props.theme.mutedColorSecondary7
       : props.theme.primaryColor};
   margin-bottom: 16px;
-
+  @media ${device.tablet} {
+    font-size: ${mobile.medium};
+  }
   @media ${device.laptop} {
     font-size: ${desktop.small};
   }
@@ -160,6 +162,9 @@ export const Paragraph = styled.h3<HeaderTextProp>`
   font-weight: 300;
   color: ${(props) => props.theme.mutedColorSecondary7};
   line-height: 1.5rem;
+  @media ${device.tablet} {
+    font-size: ${mobile.medium};
+  }
   @media ${device.laptop} {
     font-size: ${desktop.normal};
     margin: 0;
@@ -170,7 +175,8 @@ export const ContentContainer = styled.div<ContentContainerProp>`
   height: 100%;
   margin-left: ${(props) => (props.allowLeftMargin ? `16px` : 0)};
   margin-right: ${(props) => (props.allowRightMargin ? `16px` : 0)};
-  @media ${device.laptop} {
+
+  @media ${device.laptopL} {
     margin-left: ${(props) =>
       props.allowLeftMargin && props.isCustomizedLeftMargin
         ? `5rem`
@@ -195,13 +201,20 @@ export const ContentContainer = styled.div<ContentContainerProp>`
   .title-pressable {
     cursor: pointer;
   }
-  .copyRight{
- color: ${(props) => props.theme.mutedColorSecondary1};
-  font-family: "Open Sans", sans-serif;
-  font-weight: 500;
+  .copyRight {
+    color: ${(props) => props.theme.mutedColorSecondary1};
+    font-family: "Open Sans", sans-serif;
+    font-weight: 500;
   }
-  .
+  .link {
+    cursor: pointer;
+    &:hover {
+      transform: scale(0.99);
+      transition: transform 0.3s ease;
+    }
+  }
 `
+
 export const CenterContainer = styled.div`
   height: 100%;
   width: 100%;
@@ -211,6 +224,9 @@ export const CenterContainer = styled.div`
   align-content: center;
 `
 export const StyledLink = styled(Link)`
+  /* @media ${device.tablet} {
+    font-size: ${mobile.medium};
+  } */
   display: inline-block;
   position: relative;
   text-decoration: underline;
@@ -240,11 +256,12 @@ export const StyledLink = styled(Link)`
 `
 export const StyledTabs = styled(Tabs)`
   color: ${(props) => props.theme.primaryColor} !important;
-  /* color: red !important; */
-  font-size: ${mobile.normal} !important;
+  font-size: ${mobile.medium} !important;
   font-weight: 400;
   font-family: "Open Sans", sans-serif;
-
+  @media ${device.tablet} {
+    font-size: ${mobile.medium} !important;
+  }
   @media ${device.laptop} {
     font-size: ${desktop.xSmall} !important;
 
@@ -266,13 +283,15 @@ export const StyledTabs = styled(Tabs)`
     font-weight: 600;
   }
   .ant-tabs-tab {
+    padding: 0 ${mobile.normal};
+    font-size: ${mobile.normal} !important;
+
     :hover {
       color: ${(props) => props.theme.primaryColor} !important;
     }
   }
   .ant-tabs-ink-bar {
     position: absolute;
-
     background: ${(props) => props.theme.secondaryColor} !important;
     pointer-events: none;
   }
@@ -323,11 +342,43 @@ export const IconContainer = styled.div<{ active: boolean }>`
     props.active ? props.theme.primaryColor : props.theme.mutedColorPrimary2};
   font-size: ${desktop.normal};
   padding: 1.5rem;
+  :hover {
+    transform: scale(0.95);
+    transition: transform 0.3s ease-in-out;
+  }
 `
 export const StyledDrawer = styled(Drawer)`
   border: none;
 
   @media ${device.laptop} {
     display: none;
+  }
+`
+export const MasonryImageGrid = styled.div`
+  /* display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  background: green;
+  grid-gap: 0rem 0rem;
+  width: 100%; */
+  column-count: 1;
+  column-gap: 0em;
+  @media ${device.laptop} {
+    column-count: 2;
+    column-gap: 0em;
+  }
+
+  /* margin: 0 auto; */
+  .image {
+    display: block;
+    width: 100%;
+    object-fit: cover;
+    background-size: cover;
+  }
+`
+export const CenterWithPadding = styled.div`
+  padding: 0 1rem;
+
+  @media ${device.laptop} {
+    padding: 0 30rem;
   }
 `

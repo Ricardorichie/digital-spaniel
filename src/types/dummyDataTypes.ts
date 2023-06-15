@@ -5,8 +5,9 @@ export interface ProjectsDataType {
   title: string
 }
 export interface TestimonialDataType {
-  description: string
+  testimony: string
   id: number
   imageUrl: string
-  title: string
+  name: string
+  position: string
 }

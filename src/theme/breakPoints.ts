@@ -1,12 +1,12 @@
 interface Size {
-  mobileS: string;
-  mobileM: string;
-  mobileL: string;
-  tablet: string;
-  laptop: string;
-  laptopL: string;
-  desktop: string;
-  desktopL?: string;
+  mobileS: string
+  mobileM: string
+  mobileL: string
+  tablet: string
+  laptop: string
+  laptopL: string
+  desktop: string
+  desktopL?: string
 }
 
 const size: Size = {
@@ -17,7 +17,7 @@ const size: Size = {
   laptop: "1024px",
   laptopL: "1440px",
   desktop: "2560px",
-};
+}
 
 export const device: Size = {
   mobileS: `(min-width: ${size.mobileS})`,
@@ -28,4 +28,4 @@ export const device: Size = {
   laptopL: `(min-width: ${size.laptopL})`,
   desktop: `(min-width: ${size.desktop})`,
   desktopL: `(min-width: ${size.desktop})`,
-};
+}

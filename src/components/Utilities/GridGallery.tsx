@@ -2,6 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import { ProjectsDataType } from "../../types/dummyDataTypes"
 import ImageProjector from "./ImageProjector"
+import { device } from "../../theme/breakPoints"
 type GridGalleryProps = {
   data: ProjectsDataType[]
 }
@@ -23,9 +24,6 @@ const GridGallery = (props: GridGalleryProps) => {
           spanFirstTwoColumns={rowData.length === 2 && index === 0}
           spanSecondColumn={rowData.length === 2 && index === 1}
         >
-          {/* {Array.isArray(item) ? item.join(", ") : item} */}
-          {/* {item.title} */}
-          {/* {item.description} */}
           <ImageProjector data={item} />
         </GridItem>
       ))
@@ -57,8 +55,14 @@ const GridContainer = styled.div`
 
 const GridRow = styled.div<{ columns: number }>`
   display: grid;
-  grid-template-columns: ${({ columns }) => `repeat(${columns}, 1fr)`};
+  grid-template-columns: repeat(1, 1fr);
   gap: 1.5rem;
+
+  @media ${device.laptop} {
+    gap: 1.5rem;
+
+    grid-template-columns: ${({ columns }) => `repeat(${columns}, 1fr)`};
+  }
 `
 
 const GridItem = styled.div<GridItemProps>`
@@ -66,24 +70,26 @@ const GridItem = styled.div<GridItemProps>`
   border-radius: 10px;
   height: 26.212rem;
   display: inline-block;
-
-  ${({ spanAllColumns }) =>
-    spanAllColumns &&
-    `
-    grid-column: 1 / span 3;
+  width: 100%;
+  @media ${device.laptop} {
+    ${({ spanAllColumns }) =>
+      spanAllColumns &&
+      `
+    grid-column: 1 / span 3 !important;
   `}
 
-  ${({ spanFirstTwoColumns }) =>
-    spanFirstTwoColumns &&
-    `
-    grid-column: 1 / span 2;
+    ${({ spanFirstTwoColumns }) =>
+      spanFirstTwoColumns &&
+      `
+    grid-column: 1 / span 2 !important;
   `}
 
   ${({ spanSecondColumn }) =>
-    spanSecondColumn &&
-    `
-    grid-column: 3;
+      spanSecondColumn &&
+      `
+    grid-column: 3 !important;
   `}
+  }
 `
 /* grid-column: ${({ spanAll }) => */
 // spanAll === 1 ? "1 / span 3" : spanAll === 2 ? "2 / span 3" : "auto"};
